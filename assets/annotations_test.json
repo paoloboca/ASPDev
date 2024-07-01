@@ -1,0 +1,84 @@
+{
+	"@":{
+		"@rule": {
+			"label": "rule",
+			"snippet": "rule(name=\"${1:rName}\", block=\"${2:bName}\")",
+			"detail": "(annotation) @rule(name=\"rName\", block=\"bName\")",
+			"documentation": " The name rName is assigned to the following rule. Assigning a rule to a block is optional"
+		},
+		"@block": {
+			"label": "block",
+			"snippet": "block(name=\"${1:bName}\")",
+			"detail": "(annotation) @block(name=\"bName\", rules={rList})",
+			"documentation": "Defines a block with name bName.Optionally a block may specify the list of rules that it covers"
+		},
+		"@test": {
+			"label": "test",
+			"snippet": "test{\n\t\"name\":\"${1:testName}\",\n\t \"scope\":[\"${2:referenceList}\"],\n\t\"input\":\"${4:aspCode}\", \n\t \"assert\":[\"${6:assertionList}\"],\n\t\"file\":\"${3:programFileList}\"\n\t}",
+			"detail": "(annotation) @test(name=\"testName\", scope={referenceList}, programFiles={programFileList}, input=\"aspCode\", inputFiles={inputFileList}, assert={assertionList})",
+			"documentation":  "Defines a test case with name testName and scope referenceList which is a list of strings referencing the rules and/or blocks under test. The target file is the current file, if programFiles is not defined. An input for the test can be specified in aspCode or several files (property input Files)v can be set optionally.Furthermore assertionList is a list of assertions that have to be fulfilled for this test case"
+
+		},
+		"@noAnswerSet": {
+    "label": "noAnswerSet",
+    "snippet": "\"@noAnswerSet{}\"",
+    "detail": "(annotation) @noAnswerSet",
+    "documentation": "The test must have no answer set."
+  },
+  "@trueInAll": {
+    "label": "trueInAll",
+    "snippet": "\"@trueInAll{atoms=\"${1:atoms}\"}\"",
+    "detail": "(annotation) @trueInAll(atoms=\"atoms\")",
+    "documentation": "The atoms specified in atoms must be true\nin all answer sets."
+  },
+  "@trueInAtLeast": {
+    "label": "trueInAtLeast",
+    "snippet": "\"@trueInAtLeast{number=${1:n}, atoms=\"${2:atoms}\"}\"",
+    "detail": "(annotation) @trueInAtLeast(number=n, atoms=\"atoms\")",
+    "documentation": "The atoms specified in atoms must be true\nin at least n answer sets."
+  },
+  "@trueInAtMost": {
+    "label": "trueInAtMost",
+    "snippet": "\"@trueInAtMost{number=${1:n}, atoms=\"${2:atoms}\"}\"",
+    "detail": "(annotation) @trueInAtMost(number=n, atoms=\"atoms\")",
+    "documentation": "The atoms specified in atoms must be true\nin at most n answer sets."
+  },
+  "@trueInExactly": {
+    "label": "trueInExactly",
+    "snippet": "\"@trueInExactly{number=${1:n}, atoms=\"${2:atoms}\"}\"",
+    "detail": "(annotation) @trueInExactly(number=n, atoms=\"atoms\")",
+    "documentation": "The atoms specified in atoms must be true\nin exactly n answer sets."
+  },
+  "@constraintForAll": {
+    "label": "constraintForAll",
+    "snippet": "\"@constraintForAll{constraint=\"${1:c}\"}\"",
+    "detail": "(annotation) @constraintForAll(constraint=\"c\")",
+    "documentation": "The constraint specified in c must be fulfilled\nin all answer sets."
+  },
+  "@constraintInAtLeast": {
+    "label": "constraintInAtLeast",
+    "snippet": "\"@constraintInAtLeast{number=${1:n}, constraint=\"${2:c}\"}\"",
+    "detail": "(annotation) @constraintInAtLeast(number=n, constraint=\"c\")",
+    "documentation": "The constraint specified in c must be fulfilled\nin at least n answer sets."
+  },
+  "@constraintInAtMost": {
+    "label": "constraintInAtMost",
+    "snippet": "\"@constraintInAtMost{number=${1:n}, constraint=\"${2:c}\"}\"",
+    "detail": "(annotation) @constraintInAtMost(number=n, constraint=\"c\")",
+    "documentation": "The constraint specified in c must be fulfilled\nin at most n answer sets."
+  },
+  "@constraintInExactly": {
+    "label": "constraintInExactly",
+    "snippet": "\"@constraintInExactly{number=${1:n}, constraint=\"${2:c}\"}\"",
+    "detail": "(annotation) @constraintInExactly(number=n, constraint=\"c\")",
+    "documentation": "The constraint specified in c must be fulfilled\nin exactly n answer sets."
+  },
+  "@bestModelCost": {
+    "label": "bestModelCost",
+    "snippet": "\"@bestModelCost{cost=${1:cv}, level=${2:lv}}\"",
+    "detail": "(annotation) @bestModelCost(cost=cv, level=lv)",
+    "documentation": "The best model has to meet the cost of cv\nat level lv (for weak constraints)."
+  }
+	}
+
+}
