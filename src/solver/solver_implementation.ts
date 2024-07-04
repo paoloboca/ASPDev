@@ -80,9 +80,7 @@ export class Grounder_Solver {
         return this.runAspSystem(files_paths,choose,[],pathToExe);
     }
 
-    wasp(files_paths: string[],pathToExe:string,choose:string): string[] {
-        return this.runAspSystem(files_paths,choose,["--mode=wasp", "--t"],pathToExe);
-    }
+    
 
     
 
