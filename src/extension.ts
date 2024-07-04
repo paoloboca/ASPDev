@@ -46,7 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
                 exe_choose = await vscode.window.showQuickPick(['dlv2', 'clingo'], { placeHolder: 'Seleet the executable' });
             }
             
-            const selectedMethod = await vscode.window.showQuickPick(['Ground', 'Get All Answer Sets', 'Get First Answer Set','Wasp'], { placeHolder: 'Select option' });
+            const selectedMethod = await vscode.window.showQuickPick(['Ground', 'Get All Answer Sets', 'Get First Answer Set'], { placeHolder: 'Select option' });
 
             const solver = new Grounder_Solver();
             if(exe_choose=='dlv2'){
@@ -66,9 +66,6 @@ export function activate(context: vscode.ExtensionContext) {
                     break;
                 case 'Get First Answer Set':
                     result = solver.getFirstAnswerSet([finalPath],pathToExe,executable);
-                    break;
-                case 'Wasp':
-                    result = solver.wasp([finalPath],pathToExe,executable);
                     break;
                 default:
                     vscode.window.showErrorMessage('Metodh not valid.');
